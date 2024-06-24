@@ -39,7 +39,7 @@ export default function Home() {
       })
       axios.get('/api/reseach', {
         params: {
-          per_page: data.total_items,
+          per_page: data.total_items+10,
           q: encodeURIComponent(searchText),
           'province_ids[0]': 73,
           token: token,
@@ -57,8 +57,9 @@ export default function Home() {
       
     })
   }
-  const exportToExcel = (data: any, filename: string) => {
+  const exportToExcel = (data: any, filename: string, data2: any) => {
     const ws = XLSX.utils.json_to_sheet(data);
+    const ws2 = XLSX.utils.json_to_sheet(data2);
   
     // Xử lý các liên kết
     data.forEach((row: any, rowIndex: any) => {
@@ -67,9 +68,15 @@ export default function Home() {
         ws[cellRef].l = { Target: row['Link CV'], Tooltip: 'Tại đây' };
       }
     });
-  
+    data2.forEach((row: any, rowIndex: any) => {
+      const cellRef = XLSX.utils.encode_cell({ r: rowIndex + 1, c: 6 }); // Cột thứ 4 (Link CV)
+      if (row['Link CV']) {
+        ws2[cellRef].l = { Target: row['Link CV'], Tooltip: 'Tại đây' };
+      }
+    });
     const wb = XLSX.utils.book_new();
-    XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
+    XLSX.utils.book_append_sheet(wb, ws2, 'Tất cả ứng viên');
+    XLSX.utils.book_append_sheet(wb, ws, 'Ứng viên có CV');
     XLSX.writeFile(wb, `${filename}.xlsx`);
   };
   function convertDate(dateString: any) {
@@ -178,7 +185,17 @@ Promise.all(promises)
 
       // console.log(list);
       
-    exportToExcel(list.sort((a:any, b:any) => b.is_public - a.is_public), 'exported_CV');
+    exportToExcel(list.sort((a:any, b:any) => b.is_public - a.is_public), 'exported_CV', results.map((item:any) => {
+      return {
+        'ID ứng viên': item.id,
+          'Tên ứng viên': item.name,
+          'Ngày sinh': item.birthday,
+          'Kinh nghiệm': item.experience + ' năm',
+          'Vị trí': item.title,
+          'Lương': item.min_expected_salary,
+          'Link CV': item.cv_file_url,
+      }
+    }));
     // console.log(data);
     
     setVisible(false)

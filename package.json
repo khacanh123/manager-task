@@ -11,9 +11,9 @@
   "dependencies": {
     "@dotlottie/player-component": "^2.7.12",
     "@emotion/react": "^11.10.5",
-    "@fullcalendar/daygrid": "^6.1.14",
-    "@fullcalendar/interaction": "^6.1.14",
-    "@fullcalendar/react": "^6.1.14",
+    "@fullcalendar/daygrid": "^5.11.3",
+    "@fullcalendar/interaction": "^5.11.3",
+    "@fullcalendar/react": "^5.11.3",
     "@mantine/core": "^5.10.0",
     "@mantine/hooks": "^5.10.0",
     "@next/font": "13.1.1",

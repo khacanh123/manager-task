@@ -46,6 +46,7 @@ const createUser = () => {
             className={`${currentStep == 0 && 'first'} ${currentStep == 4 && 'last'} ${index < currentStep && 'done'} ${currentStep == index && 'current'}`}
             aria-disabled="false"
             aria-selected="false"
+            key={index}
           >
             <a
               id="tab-wizard-t-0"

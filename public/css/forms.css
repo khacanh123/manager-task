@@ -1,0 +1,184 @@
+
+/* ------------------------------------------------------------
+	Tables
+------------------------------------------------------------ */
+
+th[field]:hover {
+	background-color: rgba(0,0,0,0.1);
+}
+
+.tableRow {
+	cursor: pointer;
+}
+
+/* ------------------------------------------------------------
+	Form validation
+------------------------------------------------------------ */
+
+.input-validation-error {
+	border: 1px solid #f00 !important;
+	background-color: #fee !important;
+}
+
+/* ------------------------------------------------------------
+	Date picker
+------------------------------------------------------------ */
+
+.datepicker {
+	z-index: 9999 !important;
+}
+
+/* ------------------------------------------------------------
+	Auto complete
+------------------------------------------------------------ */
+
+ul.ui-autocomplete.ui-menu {
+	font-family: "Montserrat", sans-serif;
+}
+
+.ui-menu {
+	display: block;
+	background-color: white;
+}
+
+	.ui-menu .ui-menu-item {
+		width: 100%;
+	}
+
+		.ui-menu .ui-menu-item a {
+			display: block;
+		}
+
+/* ------------------------------------------------------------
+	Selectize tags
+------------------------------------------------------------ */
+
+#input_Tags-selectized {
+	font-size: 1rem !important;
+}
+
+.selectize-input {
+	border: 1px solid #ced4da !important;
+	outline: 0 none !important;
+	border-color: #ced4da !important;
+}
+
+	.selectize-input .item {
+		padding: 6px 12px 6px 12px !important;
+		font-family: Arial !important;
+		font-size: 1rem !important;
+		color: white !important;
+		background-color: #398bf7 !important;
+		border-radius: 4px !important;
+	}
+
+.selectize-control::before {
+	-o-transition: opacity 0.2s;
+	-moz-transition: opacity 0.2s;
+	-webkit-transition: opacity 0.2s;
+	transition: opacity 0.2s;
+	content: ' ';
+	z-index: 2;
+	position: absolute;
+	display: block;
+	top: 13px;
+	right: 0;
+	width: 30px;
+	height: 30px;
+	margin: -8px 0 0 0;
+	opacity: 0;
+}
+
+.selectize-control.loading::before {
+	opacity: 0.4;
+}
+
+/* ------------------------------------------------------------
+	Reports
+------------------------------------------------------------ */
+
+.selectedRendering {
+	cursor: pointer;
+	border: solid 1px black;
+	padding: 4px;
+}
+
+.unSelectedRendering {
+	cursor: pointer;
+	border: dashed 1px silver;
+	padding: 4px;
+}
+
+	.unSelectedRendering:hover {
+		cursor: pointer;
+		border: solid 1px white;
+		padding: 4px;
+	}
+
+.selectedOrdering {
+	cursor: pointer;
+	border: solid 1px black;
+	padding: 4px;
+}
+
+.unSelectedOrdering {
+	cursor: pointer;
+	border: dashed 1px silver;
+	padding: 4px;
+}
+
+	.unSelectedOrdering:hover {
+		cursor: pointer;
+		border: solid 1px white;
+		padding: 4px;
+	}
+
+.filterBox:hover {
+	background-color: #050505;
+	color: white;
+}
+
+/* ------------------------------------------------------------
+	Drag-and-drop
+------------------------------------------------------------ */
+
+.draggable:hover {
+	cursor: move;
+	border: 1px solid black dashed !important;
+}
+
+/* ------------------------------------------------------------
+	Hands-on table
+------------------------------------------------------------ */
+
+.handsontable {
+	font-family: "Montserrat", sans-serif;
+	font-size: 14px;
+	color: black;
+}
+
+	.handsontable th {
+		background-color: rgba(0,0,0,.03) !important;
+	}
+
+.htAutocomplete {
+	font-size: 14px;
+	color: black !important;
+}
+
+.htDimmed {
+	color: black !important;
+}
+
+/* ------------------------------------------------------------
+	Invoices
+------------------------------------------------------------ */
+
+.invoiceTitle {
+	background-color: black;
+	text-align: center;
+}
+
+	.invoiceTitle h2 {
+		color: white;
+	}
